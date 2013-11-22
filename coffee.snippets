@@ -77,87 +77,17 @@ snippet switch
     when ${2:Mon} then ${3:go work}
     else ${4:go relax}
 
-# Asignation ##
-snippet ##
+# Block comment
+snippet ###
   ###
-   *${1:comment}
+   * ${1:comment}
    ###
 
 
-## Backbone.js CoffeeScript snippets
-##
-## controller
-snippet bbcon
-  class ${1:classname} extends Backbone.Controller
-
-    routes:
-      '${2:route}': '${3:function}'
-
-    $3: ->
-        ${4:#function stuff here...}
+## Spine.js CoffeeScript snippets ##
 
 ## model
-snippet bbmod
-  class ${1:name} extends Backbone.Model
-
-    ${2}
-
-## view
-snippet bbview
-  class ${1:name} extends Backbone.View
-
-    initialize: ->
-      @render()
-
-    render: ->
-      $(this.el).html(JST.${2:template}(model: @model))
-      ${3}
-      @
-
-## collection
-snippet bbcol
-  class ${1:name} extends Backbone.Collection
-
-    initialize: ->
-
-    url: '${2:url}'
-
-
-## Spine.js CoffeeScript snippets
-##
-## controller
-snippet scon
-  define (require)->
-    Spine = require 'spine'
-
-
-    class ${1:classname} extends Spine.Controller
-
-      elements:
-        '${2:selector}': '${3:variable}'
-
-      events:
-        '${4:event selector}': '${6:callback}'
-
-
-      ###
-       *
-       ###
-      render: ->
-        @replace Template this
-        @el
-
-
-      ###
-       * Extend parent class method to release nested controllers.
-       ###
-      release: =>
-        # Release child controllers here...
-        super
-
-
-## model
-snippet smod
+snippet model
   ###
    * ${4}
    ###
@@ -174,7 +104,7 @@ snippet smod
 
 
       ###
-       * Model validation
+       * Model validation.
        *
        * @see http://spinejs.com/api/models
        ###
@@ -196,7 +126,7 @@ snippet smod
       module.exports = $1
 
 
-## Require.js CoffeeScript snippets
+## Require.js CoffeeScript snippets ##
 
 ## Simplified CommonJS wrapper
 snippet amd
