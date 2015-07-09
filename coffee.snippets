@@ -84,58 +84,10 @@ snippet ###
    ###
 
 
-## Spine.js CoffeeScript snippets ##
-
-## model
-snippet model
-  ###
-   * ${4}
-   ###
-  define (require, exports, module)->
-    Spine = require 'spine'
 
 
-    class ${1:classname} extends Spine.Model
-
-      @configure '${2:$1}',
-        ${3:'attribute'}
-
-      @logPrefix: "(#{ @className } Model)"
 
 
-      ###
-       * Model validation.
-       *
-       * @see http://spinejs.com/api/models
-       ###
-      validate: ->
-        return
 
 
-      ###
-       * Bind global record events for debug logging.
-       *
-       * This can be disabled by either setting `Spine.Model.trace = false` before creating models, or by setting `Model.trace = false` on existing models.
-       ###
-      $1.bind 'refresh', -> @log 'refreshed:', arguments
-      $1.bind 'create', -> @log 'created: ', arguments
-      $1.bind 'update', -> @log 'updated: ', arguments
-      $1.bind 'error', -> @log 'error: ', arguments
-      $1.bind 'destroy', -> @log 'destroyed: ', arguments
 
-      module.exports = $1
-
-
-## Require.js CoffeeScript snippets ##
-
-## Simplified CommonJS wrapper
-snippet amd
-  ###
-   * ${1:description}
-   ###
-
-  define (require)->
-    ${2:Module} = require '${3:module-name}'
-
-snippet require
-  ${1:Module} = require '${2:module-name}'
