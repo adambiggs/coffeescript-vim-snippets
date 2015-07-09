@@ -90,7 +90,23 @@ snippet req
   ${1:Module} = require '${2:module-name}'
 
 
+# Mocha
 
+snippet bE
+  beforeEach (done)->
+    ${1}
+    done()
 
+snippet aE
+  afterEach (done)->
+    ${1}
+    done()
 
+snippet it
+  it '${1:description}', (done)->
+    ${2:assertion}
+    done()
 
+snippet itp
+  it '${1:description}', ->
+    ${2:assertion}
